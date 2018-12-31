@@ -1,0 +1,36 @@
+<p></p>
+<form #categoryForm="ngForm" style = "width:40%"(ngSubmit)="validation()">
+
+  <div class="form-group">
+
+    <label>Titre</label>
+    <input type="text" class="form-control" name="title" [(ngModel)]="categoryToEdit.title" required minlength="5" #title="ngModel">
+      <div *ngIf="title.errors && (title.dirty || title.touched)"
+          class="alert alert-danger">
+        <div [hidden]="!title.errors.required">
+          Champ obligatoire
+        </div>
+        <div [hidden]="!title.errors.minlength">
+          Le champ doit contenir au moins 5 caractères
+        </div>
+      </div>
+
+    <label>Description</label>
+    <textarea class="form-control" name="description" [(ngModel)]="categoryToEdit.description" required minlength="10" #description="ngModel"></textarea>
+      <div *ngIf="description.errors && (description.dirty || description.touched)"
+          class="alert alert-danger">
+        <div [hidden]="!description.errors.required">
+          Champ obligatoire
+        </div>
+        <div [hidden]="!description.errors.minlength">
+          Le champ doit contenir au moins 10 caractères
+        </div>
+      </div>
+
+  </div>
+    
+  <button [disabled]="!categoryForm.form.valid" type="submit" class="btn btn-danger">Valider</button>
+  <button class="btn btn-secondary" routerLink="/categories">Précédent</button>
+</form>
+
+

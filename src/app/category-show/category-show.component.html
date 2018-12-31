@@ -1,0 +1,13 @@
+<p></p>
+<div>
+    <h3>Titre :</h3>
+     <p>{{category.title}}</p>
+    <h3>Description:</h3>
+     <p>{{ category.description }}</p>
+</div>
+
+<p></p>
+
+<a class="btn btn-secondary" routerLink="/category/{{ category.title }}/edit">Modifier</a>
+<a class="btn btn-secondary" (click)="deleteCategory()">Supprimer</a>
+<a class="btn btn-secondary" routerLink="/categories">Précédent</a>

@@ -1,0 +1,34 @@
+<p></p>
+<div>
+    <h3>Titre: </h3>
+     <p>{{readingSheet.Title}}</p>
+    <h3>Auteur:</h3> 
+     <p>{{ readingSheet.Author }}</p>
+    <h3>Nombre de pages:</h3>
+     <p>{{ readingSheet.PagesNumber }}</p>
+    <h3>Editeur:</h3>
+     <p>{{ readingSheet.Editor }}</p>
+    <h3>Date d'édition:</h3>
+     <p>{{ readingSheet.EditionDate }} </p>
+    <h3>Collection:</h3>
+     <p>{{ readingSheet.Collection }}</p>
+    <h3>Langue originale:</h3>
+     <p>{{ readingSheet.OriginalLanguage }}</p>
+    <h3>Personnages principaux:</h3>
+     <p>{{ readingSheet.MainCharacters }}</p>
+    <h3>Résumé:</h3>
+     <p>{{ readingSheet.Summary }}</p>
+    <h3>Extrait préféré:</h3>
+     <p>{{ readingSheet.EnjoyedExtract }}</p>
+    <h3>Analyse critique:</h3>
+     <p>{{ readingSheet.CriticalAnalysis }}</p>
+    <h3>Catégorie:</h3>
+     <p>{{ readingSheet.category.title }}</p>
+  
+</div>
+
+<p></p>
+
+<a class="btn btn-secondary" routerLink="/readingSheet/{{ readingSheet.id }}/edit">Modifier</a>
+<a class="btn btn-secondary" (click)="deleteReadingSheet()">Supprimer</a>
+<a class="btn btn-secondary" routerLink="/readingSheets">Précédent</a> 

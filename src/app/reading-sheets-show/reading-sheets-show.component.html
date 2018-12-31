@@ -1,0 +1,23 @@
+<p></p>
+<p></p>
+
+<div class ="bouton-aligne" *ngFor="let category of categories">   
+  <button class="btn btn-danger"  (click)="search(category.title)" style="margin-left: 20px; margin-top: 15px; " >{{category.title}}</button>
+</div>
+
+  <button class="btn btn-danger" (click)="getReadingSheets()" style="float:right; margin-right: 15px; margin-top: 15px;" >Toutes les catégories</button>
+
+
+<p></p>
+<p></p>
+
+<div class="list-group" *ngFor="let readingSheet of readingSheets" >
+  <a class="list-group-item list-group-item-action" style="text-align:center" routerLink="/readingSheet/{{ readingSheet.id }}">{{ readingSheet.Title }}</a>
+  <p> </p>
+</div> 
+
+<a class="btn btn-secondary" routerLink="/addReadingSheets">Ajouter une fiche de lecture</a>
+
+<app-count-reading-sheets
+  [readingSheetsNumber] = "readingSheets.length">
+</app-count-reading-sheets>

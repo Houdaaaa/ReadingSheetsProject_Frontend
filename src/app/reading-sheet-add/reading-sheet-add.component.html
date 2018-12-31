@@ -1,0 +1,156 @@
+<p></p>
+<form #readingSheetForm="ngForm" style = "width:40%"(ngSubmit)="validation()">
+
+  <div class="form-group">
+
+    <label>Titre</label>
+    <input type="text" class="form-control" name="Title" [(ngModel)]="newReadingSheet.Title" required minlength="5" #Title="ngModel">
+      <div *ngIf="Title.errors && (Title.dirty || Title.touched)"
+          class="alert alert-danger">
+        <div [hidden]="!Title.errors.required">
+          Champ obligatoire
+        </div>
+        <div [hidden]="!Title.errors.minlength">
+          Le champ doit contenir au moins 5 caractères
+        </div>
+      </div>
+
+
+    <label>Auteur</label>
+    <input type="text" class="form-control" name="Author" [(ngModel)]="newReadingSheet.Author" required minlength="5" #Author="ngModel">
+      <div *ngIf="Author.errors && (Author.dirty || Author.touched)"
+          class="alert alert-danger">
+        <div [hidden]="!Author.errors.required">
+          Champ obligatoire
+        </div>
+        <div [hidden]="!Author.errors.minlength">
+          Le champ doit contenir au moins 5 caractères
+        </div>
+      </div>
+
+    <label>Nombre de pages</label>
+    <input type="number" class="form-control" name="PagesNumber" [(ngModel)]="newReadingSheet.PagesNumber" required #PagesNumber="ngModel">
+      <div *ngIf="PagesNumber.errors && (PagesNumber.dirty || PagesNumber.touched)"
+          class="alert alert-danger">
+        <div [hidden]="!PagesNumber.errors.required">
+          Champ obligatoire
+        </div>
+        <div [hidden]="!PagesNumber.errors.minlength">
+          Le champ doit contenir au moins 5 caractères
+        </div>
+      </div>
+
+    <label>Editeur</label>
+    <input type="text" class="form-control" name="Editor" [(ngModel)]="newReadingSheet.Editor" required minlength="5" #Editor="ngModel">
+      <div *ngIf="Editor.errors && (Editor.dirty || Editor.touched)"
+          class="alert alert-danger">
+        <div [hidden]="!Editor.errors.required">
+          Champ obligatoire
+        </div>
+        <div [hidden]="!Editor.errors.minlength">
+          Le champ doit contenir au moins 5 caractères
+        </div>
+      </div>
+
+    <label>Date d'édition</label>
+    <input type="text" class="form-control" name="EditionDate" [(ngModel)]="newReadingSheet.EditionDate" required minlength="8" #Editor="ngModel">
+      <div *ngIf="Editor.errors && (Editor.dirty || Editor.touched)"
+          class="alert alert-danger">
+        <div [hidden]="!Editor.errors.required">
+          Champ obligatoire
+        </div>
+        <div [hidden]="!Editor.errors.minlength">
+          Le champ doit contenir au moins 8 caractères
+        </div>
+      </div>
+
+    <label>Collection</label>
+    <input type="text" class="form-control" name="Collection" [(ngModel)]="newReadingSheet.Collection" required minlength="5" #Collection="ngModel">
+      <div *ngIf="Collection.errors && (Collection.dirty || Collection.touched)"
+          class="alert alert-danger">
+        <div [hidden]="!Collection.errors.required">
+          Champ obligatoire
+        </div>
+        <div [hidden]="!Collection.errors.minlength">
+          Le champ doit contenir au moins 5 caractères
+        </div>
+      </div>
+
+    <label>Langue originale</label>
+    <input type="text" class="form-control" name="OriginalLanguage" [(ngModel)]="newReadingSheet.OriginalLanguage" required minlength="5" #OriginalLanguage="ngModel">
+      <div *ngIf="OriginalLanguage.errors && (OriginalLanguage.dirty || OriginalLanguage.touched)"
+          class="alert alert-danger">
+        <div [hidden]="!OriginalLanguage.errors.required">
+          Champ obligatoire
+        </div>
+        <div [hidden]="!OriginalLanguage.errors.minlength">
+          Le champ doit contenir au moins 5 caractères
+        </div>
+      </div>
+
+    <label>Personnages principaux</label>
+    <textarea type="text" class="form-control" name="MainCharacters" [(ngModel)]="newReadingSheet.MainCharacters" required minlength="5" #MainCharacters="ngModel"></textarea>
+      <div *ngIf="MainCharacters.errors && (MainCharacters.dirty || MainCharacters.touched)"
+          class="alert alert-danger">
+        <div [hidden]="!MainCharacters.errors.required">
+          Champ obligatoire
+        </div>
+        <div [hidden]="!MainCharacters.errors.minlength">
+          Le champ doit contenir au moins 5 caractères
+        </div>
+      </div>
+
+    <label>Résumé</label>
+    <textarea type="text" class="form-control" name="Summary" [(ngModel)]="newReadingSheet.Summary" required minlength="20" #Summary="ngModel"></textarea>
+      <div *ngIf="Summary.errors && (Summary.dirty || Summary.touched)"
+          class="alert alert-danger">
+        <div [hidden]="!Summary.errors.required">
+          Champ obligatoire
+        </div>
+        <div [hidden]="!Summary.errors.minlength">
+          Le champ doit contenir au moins 20 caractères
+        </div>
+      </div>
+
+    <label>Extrait préféré</label>
+    <textarea type="text" class="form-control" name="EnjoyedExtract" [(ngModel)]="newReadingSheet.EnjoyedExtract" required minlength="20" #EnjoyedExtract="ngModel"></textarea>
+      <div *ngIf="EnjoyedExtract.errors && (EnjoyedExtract.dirty || EnjoyedExtract.touched)"
+          class="alert alert-danger">
+        <div [hidden]="!EnjoyedExtract.errors.required">
+          Champ obligatoire
+        </div>
+        <div [hidden]="!EnjoyedExtract.errors.minlength">
+          Le champ doit contenir au moins 20 caractères
+        </div>
+      </div>
+
+    <label>Analyse critique</label>
+    <textarea type="text" class="form-control" name="CriticalAnalysis" [(ngModel)]="newReadingSheet.CriticalAnalysis" required minlength="20" #CriticalAnalysis="ngModel"></textarea>
+      <div *ngIf="CriticalAnalysis.errors && (CriticalAnalysis.dirty || CriticalAnalysis.touched)"
+          class="alert alert-danger">
+        <div [hidden]="!CriticalAnalysis.errors.required">
+          Champ obligatoire
+        </div>
+        <div [hidden]="!CriticalAnalysis.errors.minlength">
+          Le champ doit contenir au moins 20 caractères
+        </div>
+      </div>
+
+  
+    <label>Catégorie</label>
+    <select class="form-control" name="category" [(ngModel)]="newReadingSheet.category.title" required #category="ngModel">
+      <option *ngFor="let category of categories">{{category.title}}</option>
+    </select>
+      <div *ngIf="category.errors && (category.dirty || category.touched)"
+          class="alert alert-danger">
+        <div [hidden]="!category.errors.minlength">
+          Le champ doit contenir au moins 20 caractères
+        </div>
+      </div>
+
+  </div>
+    
+  <button [disabled]="!readingSheetForm.form.valid" type="submit" class="btn btn-danger">Valider</button>
+  <button class="btn btn-danger" routerLink="/readingSheets" >Précédent</button>
+</form>
+
